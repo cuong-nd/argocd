@@ -21,18 +21,23 @@ To follow this tutorial you’ll need:
 
 ## Code struture
 ```
-> tree -L 3
+> tree -L 4
 .
 ├── README.md
 ├── k8s
 │   ├── apps
 │   │   ├── Chart.yaml
 │   │   ├── templates
+│   │   │   ├── argo-alert.yaml
+│   │   │   ├── argo-cd.yaml
+│   │   │   ├── project1.yaml
+│   │   │   └── root.yaml
 │   │   └── values.yaml
 │   ├── argocd
 │   │   ├── Chart.lock
 │   │   ├── Chart.yaml
 │   │   ├── charts
+│   │   │   └── argo-cd-2.11.0.tgz
 │   │   └── values.yaml
 │   ├── argocd-notifications
 │   │   ├── argocd-notifications-catalog-v1.0.2-install.yaml
@@ -58,9 +63,12 @@ To follow this tutorial you’ll need:
 │       └── traefik-ingress.yml
 └── project1
     ├── dev
+    │   └── user-service
+    │       ├── Chart.yaml
+    │       ├── charts
+    │       ├── templates
+    │       └── values.yaml
     └── production
-
-14 directories, 22 files
 ```
 
 ## Conclusion
