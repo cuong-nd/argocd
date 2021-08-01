@@ -8,7 +8,7 @@ For example, instead of running CLI commands to update resources with kubectl ap
 With this workflow security is improved too. A connection to the cluster, either from the developers laptop or from a CI/CD system, is no longer needed as changes are pulled from the Git repository by a Kubernetes Operator running inside the cluster.
 ## Why ArgoCD
 
-https://blog.container-solutions.com/hs-fs/hubfs/Screen%20Shot%202020-10-18%20at%2010.15.20%20AM.png?width=750&name=Screen%20Shot%202020-10-18%20at%2010.15.20%20AM.png
+![image](https://user-images.githubusercontent.com/54828182/127764137-8dbafaec-3437-4752-94ef-205bb75f43cc.png)
 
 REF: https://blog.container-solutions.com/fluxcd-argocd-jenkins-x-gitops-tools
 ## Requirements
