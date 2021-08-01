@@ -1,0 +1,11 @@
+# for create image pull policy
+kubectl create secret generic regcred --from-file=.dockerconfigjson=/Users/cuongnd/.docker/config.json --type=kubernetes.io/dockerconfigjson
+
+# argo admin pass ()
+kubectl patch secret argocd-secret \
+  -p '{"stringData": {
+    "admin.password": "$2a$10$ltvKaYlNpFFnmaOnkbfio.jX4I.tyM/bGV76Uwc57Os5Jp.2sX4ei",
+    "admin.passwordMtime": "'$(date +%FT%T%Z)'"
+  }}'
+
+argocd repo add git@github.com:cuongnd-scs/argocd.git --ssh-private-key-path ~/.ssh/id_rsa

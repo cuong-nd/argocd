@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'project1-dev-service'
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: argocd-alert
+spec:
+  destination:
+    # name: ''
+    namespace: 'default'
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'project1/dev/service'
+    repoURL: 'https://github.com/cuongnd-scs/argocd.git'
+    targetRevision: develop
+  project: 'default'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

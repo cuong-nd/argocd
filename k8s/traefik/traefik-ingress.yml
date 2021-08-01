@@ -1,0 +1,41 @@
+# traefik-ingress.yaml
+#
+# cmd: kubectl apply -f traefik-ingress.yml
+#
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware # https://doc.traefik.io/traefik/routing/providers/kubernetes-crd/#kind-middleware
+metadata:
+  name: user-service-middleware
+spec:
+  stripPrefix:
+    prefixes:
+      - /user
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-ingress
+spec:
+  entryPoints:
+    - websecure
+    - web
+  routes:
+    - match: Host(`cuongnd-dev.ml`) # && PathPrefix(`/stripprefix`) 
+      kind: Rule
+      services:
+        - name: frontend-service
+          port: 80
+
+    - match: Host(`cuongnd-dev.ml`) && PathPrefix(`/user`) 
+      kind: Rule
+      services:
+        - name: user-service
+          port: 80
+      middlewares:
+        - name: user-service-middleware
+  tls:
+    certResolver: myCert
+    options: {}
+

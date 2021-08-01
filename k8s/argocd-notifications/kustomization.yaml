@@ -1,0 +1,5 @@
+namespace: default
+resources:
+- argocd-notifications-v1.0.2-install.yaml
+patchesStrategicMerge:
+- argocd-notifications-catalog-v1.0.2-install.yaml
