@@ -6,8 +6,11 @@ Argo CD is a GitOps tool to automatically synchronize the cluster to the desired
 For example, instead of running CLI commands to update resources with kubectl apply or helm upgrade we would update an Application manifest inside our Git repository. Argo CD periodically checks the repository for changes. It will recognize that the application manifest has changed and automatically synchronize the resources on the cluster.
 
 With this workflow security is improved too. A connection to the cluster, either from the developers laptop or from a CI/CD system, is no longer needed as changes are pulled from the Git repository by a Kubernetes Operator running inside the cluster.
+## Why ArgoCD
 
+https://blog.container-solutions.com/hs-fs/hubfs/Screen%20Shot%202020-10-18%20at%2010.15.20%20AM.png?width=750&name=Screen%20Shot%202020-10-18%20at%2010.15.20%20AM.png
 
+REF: https://blog.container-solutions.com/fluxcd-argocd-jenkins-x-gitops-tools
 ## Requirements
 
 To follow this tutorial you’ll need:
