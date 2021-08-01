@@ -1,4 +1,4 @@
-### Argo CD App-of-Apps pattern and set everything up so that Argo CD can update itself.
+### ArgoCD App-of-Apps pattern, self managed, single source of true, set everything up so that Argo CD can update itself.
 ---
 ## What is Argo CD?
 Argo CD is a GitOps tool to automatically synchronize the cluster to the desired state defined in a Git repository. Each workload is defined declarative through a resource manifest in a YAML file. Argo CD checks if the state defined in the Git repository matches what is running on the cluster and synchronizes it if changes were detected.
