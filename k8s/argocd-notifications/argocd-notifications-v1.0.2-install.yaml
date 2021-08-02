@@ -46,7 +46,7 @@ kind: Secret
 metadata:
   name: argocd-notifications-secret
 stringData:
-  slack-token: xoxb-16985148512-2333550679043-XcJKNp0HneELvXwOee1C2fix
+  slack-token: xxxx
 ---
 apiVersion: v1
 kind: ConfigMap
